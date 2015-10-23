@@ -7,22 +7,8 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
 	<script type="text/javascript">
-		var getUrlParameter = function getUrlParameter(sParam) {
-		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-		        sURLVariables = sPageURL.split('&'),
-		        sParameterName,
-		        i;
-
-		    for (i = 0; i < sURLVariables.length; i++) {
-		        sParameterName = sURLVariables[i].split('=');
-
-		        if (sParameterName[0] === sParam) {
-		            return sParameterName[1] === undefined ? true : sParameterName[1];
-		        }
-		    }
-		};
-		var source = getUrlParameter('source');
-		var title = getUrlParameter('title');
+		var source = "http://media.kbia.org/evergreen/test_audio/20120210_Maplewood.mp3";
+		var title = "Static Example - Maplewood";
 	</script>
 	<script type="text/javascript">
     $(document).ready(function(){
