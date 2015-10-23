@@ -7,18 +7,35 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
 	<script type="text/javascript">
+		var getUrlParameter = function getUrlParameter(sParam) {
+		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		        sURLVariables = sPageURL.split('&'),
+		        sParameterName,
+		        i;
+
+		    for (i = 0; i < sURLVariables.length; i++) {
+		        sParameterName = sURLVariables[i].split('=');
+
+		        if (sParameterName[0] === sParam) {
+		            return sParameterName[1] === undefined ? true : sParameterName[1];
+		        }
+		    }
+		};
+		var source = getUrlParameter('source');
+		var title = getUrlParameter('title');
+	</script>
+	<script type="text/javascript">
     $(document).ready(function(){
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {
           $(this).jPlayer("setMedia", {
             title: "Bubble",
-            m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+            mp3: "http://media.kbia.org/evergreen/test_audio/20120210_Maplewood.mp3",
           });
         },
         cssSelectorAncestor: "#jp_container_1",
         swfPath: "/js",
-        supplied: "m4a, oga",
+        supplied: "mp3",
         useStateClassSkin: true,
         autoBlur: false,
         smoothPlayBar: true,
